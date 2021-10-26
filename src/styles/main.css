@@ -2,3 +2,25 @@
     margin-left: 20px;
     text-align: center;
 }
+
+/* For All games Compontent */
+.custom-row {
+  display: flex;
+  justify-content: space-between;
+}
+
+.custom-headers {
+  display: flex;
+  flex-direction: column;
+}
+
+.custom-input {
+  width: 900px;
+  margin-bottom: 100px;
+}
+
+.select {
+  font-weight: bold;
+  padding-left: 10px;
+  width: 140px;
+}
