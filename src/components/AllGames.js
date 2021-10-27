@@ -75,9 +75,9 @@ const AllGames = () => {
               <option value="Sports">Sports</option>
             </select>
             <select name="platformOption" className="select" onChange={handePlatformOption}>
-              <option value="all"></option>
-              <option value="PC (Windows)"></option>
-              <option value="Web Browser"></option>
+              <option value="all">All Platforms</option>
+              <option value="PC (Windows)">PC (Windows)</option>
+              <option value="Web Browser">Web Browser</option>
             </select>
           </div>
           
@@ -94,7 +94,7 @@ const AllGames = () => {
               // console.log('Game Short Description ->', game.short_description.slice(0, 40))
               // console.log('Game image', game)
               return (
-                <GameCard key={game.id} game={game}/>
+                <GameCard key={game.id} game={game} id={game.id}/>
               )
             })}
           </div>

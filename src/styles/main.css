@@ -3,6 +3,34 @@
   text-align: center;
 }
 
+/* Nav Start */
+.custom-nav {
+  background-color: hsl(217, 71%, 53%);
+}
+
+.custom-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+
+.custom-buttom {
+  margin-top: 20px;
+  width: 130px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+span.bold {
+  font-weight: bold;
+}
+
+.custom-link {
+  padding: 7px 20px 7px 20px;
+}
+/* Nav End */
+
 /* Hero Section Start */
 .hero-title,
 .hero-subtitle,
@@ -34,7 +62,7 @@
 .custom-input {
   width: 900px;
   margin-bottom: 100px;
-  border: 1px solid rgba(73,53,227,1);
+  border: 1px solid hsl(217, 71%, 53%);
 }
 
 .custom-card {
@@ -53,10 +81,10 @@
   /* -webkit-box-shadow: 14px 9px 39px -14px rgba(73,53,227,1);
   -moz-box-shadow: 14px 9px 39px -14px rgba(73,53,227,1);
   box-shadow: 14px 9px 39px -14px rgba(73,53,227,1); */
-  border: 2px solid rgba(73,53,227,1);
-  -webkit-box-shadow: 15px 19px 0px -4px rgba(73,53,227,1);
-  -moz-box-shadow: 15px 19px 0px -4px rgba(73,53,227,1);
-  box-shadow: 15px 19px 0px -4px rgba(73,53,227,1);
+  border: 2px solid hsl(217, 71%, 53%);
+  -webkit-box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
+  -moz-box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
+  box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
   cursor: pointer;
 }
 
@@ -64,4 +92,29 @@
   font-weight: bold;
   padding-left: 10px;
   width: 140px;
+}
+
+/* All games comoponent end */
+
+.custom-content {
+  
+}
+
+.tryNowButton {
+  margin-top: 15px;
+  padding: 0px 10px 0px 10px;
+}
+
+.develPublish {
+  font-size: 25px;
+  text-decoration: underline;
+}
+
+.displayThumbnail {
+  border-radius: 5px;
+  border: 3px solid black;
+}
+
+.displayGameContainer {
+  margin-top: 20px;
 }
