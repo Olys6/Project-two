@@ -4,7 +4,7 @@ import React from 'react'
 const GameCard = ({ game }) => {
   return (
     <div key={game.id} className="column is-one-quarter-desktop is-one-third-tablet">
-      <div className="card">
+      <div className="card custom-card">
         <div className="card-image">
           <figure className="image image-is-1by1">
             <img src={game.thumbnail} alt={game.title} />

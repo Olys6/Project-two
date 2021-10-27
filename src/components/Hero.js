@@ -4,13 +4,6 @@ import axios from 'axios'
 const Hero = () => {
 
   const [featuredGames, setFeaturedGames] = useState([])
-  const [gameId, setGameId] = useState([])
-
-  // useEffect(() => {
-  //   const randomId = Math.floor(Math.random() * 514).toString()
-  //   // console.log(randomId)
-  //   setGameId(randomId.toString())
-  // }, [])
 
   useEffect(() => {
   
@@ -24,7 +17,7 @@ const Hero = () => {
               'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
             },
           })
-        console.log('Data ->',data)
+        // console.log('Data ->',data)
         setFeaturedGames(data)
       } catch (err) {
         console.log(err)
@@ -33,24 +26,28 @@ const Hero = () => {
     getData()
   }, [])
 
-  console.log('Featured Data ->', featuredGames)
-
-  console.log(featuredGames)
+  console.log('Game Data ->', featuredGames)
 
   return (
-    <>
-      <section className="hero is-link is-halfheight">
-        <div className="hero-body">
-          <div className="columns">
-            <div className="column is-full">
-              <h1 className="title">Games</h1>
-              <h2 className="subtitle">description</h2>
-            </div>
-            <img className="column is-full" src={ featuredGames.thumbnail }></img>
+    <section className="hero is-link is-halfheight">
+      <div className="hero-body">
+        <div className="columns container is-full">
+          <div className="column is-half">
+            {/* <h1 className="title">Featured Game</h1> */}
+            <h2 className="title hero-title">{featuredGames.title}</h2>
+            {/* <h2 className="subtitle hero-subtitle">{featuredGames.short_description}</h2> */}
+            <h2 className="subtitle hero-subtitle">{featuredGames.short_description}</h2>
+            <h3 className="subtitle hero-subtitle">{featuredGames.platform}</h3>
+            <h3 className="hero-tag">
+              <span className="tag is-warning">{featuredGames.genre}</span>
+            </h3>
+          </div>
+          <div className="column is-half show-size">
+            <img className="featured-image"src={ featuredGames.thumbnail }></img>
           </div>
         </div>
-      </section>
-    </>
+      </div>
+    </section>
   )
 }
 

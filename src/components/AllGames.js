@@ -5,7 +5,8 @@ import GameCard from './GameCard'
 const AllGames = () => {
 
   const [games, setGames] = useState([])
-  const [option, setOption] = useState('all')
+  const [genreOption, setGenreOption] = useState('all')
+  const [platformOption, setPlatformOption] = useState('all')
   const [search, setSearch] = useState('')
 
   useEffect(() => {
@@ -13,6 +14,7 @@ const AllGames = () => {
       try {
         const { data } = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/games', 
           {
+            params: { 'sort-by': 'alphabetical' },
             headers: {
               'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
               'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
@@ -27,8 +29,12 @@ const AllGames = () => {
     getData()
   }, [])
 
-  const handleOption = (event) => {
-    setOption(event.target.value)
+  const handleGenreOption = (event) => {
+    setGenreOption(event.target.value)
+  }
+
+  const handePlatformOption = (event) => {
+    setPlatformOption(event.target.value)
   }
 
   const handleSearch = (event) => {
@@ -41,7 +47,7 @@ const AllGames = () => {
     //   console.log(game.title)
     // })
     return games.filter(game => {
-      return regexSearch.exec(game.title) && (game.genre === option || option === 'all')
+      return regexSearch.exec(game.title) && (game.genre === genreOption || genreOption === 'all')  && (game.platform === platformOption || platformOption === 'all')
     })
   }
 
@@ -51,7 +57,7 @@ const AllGames = () => {
         <div className="container">
           <div className="custom-row">
             <input type="text" className="input is-rounded custom-input" placeholder="Search Games" onChange={handleSearch}/>
-            <select name="option" className="select" onChange={handleOption}>
+            <select name="option" className="select" onChange={handleGenreOption}>
               <option value="all">All</option>
               <option value="MMORPG">MMORPG</option>
               <option value="Battle Royale">Battle Royale</option>
@@ -67,6 +73,11 @@ const AllGames = () => {
               <option value="Strategy">Strategy</option>
               <option value="Racing">Racing</option>
               <option value="Sports">Sports</option>
+            </select>
+            <select name="platformOption" className="select" onChange={handePlatformOption}>
+              <option value="all"></option>
+              <option value="PC (Windows)"></option>
+              <option value="Web Browser"></option>
             </select>
           </div>
           
