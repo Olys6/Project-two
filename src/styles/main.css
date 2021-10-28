@@ -178,6 +178,11 @@ div.custom-div {
 }
 /* All games comoponent end */
 
+/* My Game Table */
+section.table-section {
+  margin-top:  120px;
+}
+
 
 .tryNowButton {
   margin-top: 20px;
@@ -242,5 +247,5 @@ div.custom-div {
 }
 
 .shareButton {
-  
+  margin: 0px
 }

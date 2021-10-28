@@ -4,9 +4,14 @@ import { Link } from 'react-router-dom'
 
 const GameCard = ({ game, id }) => {
 
-  const handleClick = (event) => {
+  const handleClick = ( ) => {
     console.log('clicked')
-    console.log('Event', event.target.parentElement.parentElement)
+    localStorage.setItem(`${game.id} Game ID`, game.id)
+    localStorage.setItem(`${game.id} Game Image`, game.thumbnail)
+    localStorage.setItem(`${game.id} Game title`, game.title)
+    localStorage.setItem(`${game.id} Game Description`, game.short_description)
+    localStorage.setItem(`${game.id} Game Platform`, game.platform)
+    localStorage.setItem(`${game.id} Game Release`, game.release_date)
   }
 
 

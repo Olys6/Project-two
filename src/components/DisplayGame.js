@@ -11,24 +11,7 @@ const DisplayGame = () => {
   const { id } = useParams()
 
   useEffect(() => {
-    // const getData = async () => {
-    //   try {
-    //     const { data } = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/game', 
-    //       {
-    //         params: { id: '450' },
-    //         headers: {
-    //           'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-    //           'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
-    //         },
-    //       })
-    //     setGameInfo(data)
-    //   } catch (err) {
-    //     setHasError(true)
-    //   }
-    // }
-    // // setGameInfo('181')
-    // getData()
-    // console.log('DATA ->', gameInfo)
+    
     const getData = async () => {
       try {
         const { data } = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/game',
@@ -49,18 +32,6 @@ const DisplayGame = () => {
     getData()
   }, [])
 
-
-  // console.log('gameInfo', gameInfo)
-  // console.log('id', id)
-  // console.log('Game Info SS', gameInfo.screenshots[0].image)
-  // console.log(gameInfo.minimum_system_requirements)
-  // console.log('Hello')
-  
-  // const [mini, setMini] = useState([])
-
-  // setMini(Object.values(gameInfo.minimum_system_requirements))
- 
-  //console.log('Game Info', Object.values(gameInfo.minimum_system_requirements))
   const minimumSystemRequirements = []
   for (const property in gameInfo.minimum_system_requirements) {
     console.log(`${property}: ${gameInfo.minimum_system_requirements[property]}`)
@@ -69,6 +40,16 @@ const DisplayGame = () => {
   
   
   console.log('Array', minimumSystemRequirements)
+
+  // const handleClick = () => {
+  //   console.log('clicked')
+  //   // localStorage.setItem(`${gameInfo.id} Game ID`, gameInfo.id)
+  //   // localStorage.setItem(`${gameInfo.id} Game Image`, gameInfo.thumbnail)
+  //   // localStorage.setItem(`${gameInfo.id} Game title`, gameInfo.title)
+  //   // localStorage.setItem(`${gameInfo.id} Game Description`, gameInfo.short_description)
+  //   // localStorage.setItem(`${gameInfo.id} Game Platform`, gameInfo.platform)
+  //   // localStorage.setItem(`${gameInfo.id} Game Release`, gameInfo.release_date)
+  // }
 
   return (
     <section className="displayGameContainer">
@@ -81,23 +62,23 @@ const DisplayGame = () => {
               <a href={gameInfo.freetogame_profile_url}><img className="displayThumbnail " src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
             </figure>
             <div className="columns">
-              <a className="column button is-one-fifth is-large is-link addGamesButton " onClick={console.log('Plus Button CLicked')}><i className="fas fa-plus"></i></a>
+              <a className="column button is-one-fifth is-large is-link addGamesButton"><i className="fas fa-plus"></i></a>
               <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer" className="column  button is-success is-fullwidth is-large tryNowButton">Try Now!</a>
             </div>
             <hr />
             <div className="columns">
 
               <p className="column is-one-fifth shareText">Share:</p>
-              <a className="button column is-info" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`}>
+              <a className="button column is-info" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter"> </i> Twitter
               </a>
-              <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=Check out for free${gameInfo.freetogame_profile_url}`}>
+              <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=Check out for free${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
                 <i className="fab fa-facebook-square"> </i> Facebook 
               </a>
-              <a className="button column is-danger shareButton" href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`}>
+              <a className="button column is-danger shareButton" href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
                 <i className="fas fa-envelope"></i> Email
               </a>
-              <a className="button column is-warning shareButton" href="https://reddit.com/submit?url=<URL>&title=<TITLE>">
+              <a className="button column is-warning shareButton" href="https://reddit.com/submit?url=<URL>&title=<TITLE>" target="_blank" rel="noreferrer">
                 <i className="fab fa-reddit-square"></i> Reddit
               </a>
             </div>
