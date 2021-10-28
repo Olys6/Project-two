@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import GameCard from './GameCard'
 
 const AllGames = () => {
@@ -8,6 +9,11 @@ const AllGames = () => {
   const [genreOption, setGenreOption] = useState('all')
   const [platformOption, setPlatformOption] = useState('all')
   const [search, setSearch] = useState('')
+  const location = useLocation()
+
+  useEffect(() => {
+
+  }, [location.pathname])
 
   useEffect(() => {
     const getData = async () => {

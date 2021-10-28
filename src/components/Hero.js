@@ -1,10 +1,15 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import axios from 'axios'
 
 const Hero = () => {
 
   const [featuredGames, setFeaturedGames] = useState([])
+  const location = useLocation()
+
+  useEffect(() => {
+
+  }, [location.pathname])
 
   useEffect(() => {
   
@@ -22,6 +27,7 @@ const Hero = () => {
         setFeaturedGames(data)
       } catch (err) {
         console.log(err)
+        getData()
       }
     }
     getData()

@@ -78,14 +78,30 @@ const DisplayGame = () => {
         <div className="columns">
           <div className="column is-half">
             <figure className="image">
-              <a href={gameInfo.freetogame_profile_url}><img className="displayThumbnail" src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
+              <a href={gameInfo.freetogame_profile_url}><img className="displayThumbnail " src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
             </figure>
             <div className="columns">
-              <a className="column button is-one-fifth is-large is-link addGamesButton" onClick={console.log('Plus Button CLicked')}><i className="fas fa-plus"></i></a>
+              <a className="column button is-one-fifth is-large is-link addGamesButton " onClick={console.log('Plus Button CLicked')}><i className="fas fa-plus"></i></a>
               <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer" className="column  button is-success is-fullwidth is-large tryNowButton">Try Now!</a>
             </div>
             <hr />
-            
+            <div className="columns">
+
+              <p className="column is-one-fifth shareText">Share:</p>
+              <a className="button column is-info" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`}>
+                <i className="fab fa-twitter"> </i> Twitter
+              </a>
+              <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=Check out for free${gameInfo.freetogame_profile_url}`}>
+                <i className="fab fa-facebook-square"> </i> Facebook 
+              </a>
+              <a className="button column is-danger shareButton" href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`}>
+                <i className="fas fa-envelope"></i> Email
+              </a>
+              <a className="button column is-warning shareButton" href="https://reddit.com/submit?url=<URL>&title=<TITLE>">
+                <i className="fab fa-reddit-square"></i> Reddit
+              </a>
+            </div>
+            <hr />
             {/* <p className="is-4">{gameInfo.minimum_system_requirements.os}</p> */}
             {/* <p>{gameInfo.minimum_system_requirements}</p> */}
             <div className="tile is-ancestor">
@@ -101,9 +117,7 @@ const DisplayGame = () => {
                 <ul className="tile notification is-dark is-5 rightTile column is-two-fifths">
                   <p className=" ">Publisher: <span className="title develPublishH4">{gameInfo.publisher}</span> | Developer: <span className="title develPublishH4">{gameInfo.developer}</span></p>
                 </ul>
-                <a href={`https://twitter.com/share?url=<${gameInfo.freetogame_profile_url}>&text=<Check out this game!>via=<USERNAME>`}>
-                  Twitter
-                </a>
+
                 {/* <button className="button tile is-link" onClick="copyToClipboard('{gameInfo.freetogame_profile_url}')"><i className="far fa-copy"></i></button> */}
               </div>
             </div>

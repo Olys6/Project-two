@@ -1,6 +1,9 @@
 import React from 'react'
 
 const MyGames = () => {
+  
+
+
   return (
     <>
       <table className="table">
@@ -8,6 +11,7 @@ const MyGames = () => {
           <tr>
             <th><abbr title="Game ID">Game ID</abbr></th>
             <th><abbr title="Title">Title</abbr></th>
+            <th><abbr title="Description">Description</abbr></th>
           </tr>
         </thead>
       </table>
