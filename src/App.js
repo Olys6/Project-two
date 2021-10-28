@@ -7,6 +7,7 @@ import DisplayGame from './components/DisplayGame'
 import Home from './components/Home'
 import MyGames from './components/MyGames'
 import AllGames from './components/AllGames'
+import Footer from './components/Footer'
 
 
 const App = () => {
@@ -22,6 +23,7 @@ const App = () => {
         <Route exact path="/games/:id" component={DisplayGame}/>
         <Route exact path="/mygames" component={MyGames}/>
       </Switch>
+      <Footer />
     </BrowserRouter>
   )
 }

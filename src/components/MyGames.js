@@ -2,7 +2,16 @@ import React from 'react'
 
 const MyGames = () => {
   return (
-    <h1>My Games</h1>
+    <>
+      <table className="table">
+        <thead>
+          <tr>
+            <th><abbr title="Game ID">Game ID</abbr></th>
+            <th><abbr title="Title">Title</abbr></th>
+          </tr>
+        </thead>
+      </table>
+    </>
   )
 }
 

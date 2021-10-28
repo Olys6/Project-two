@@ -15,7 +15,7 @@ const Hero = () => {
             params: { id: Math.floor(Math.random() * 514).toString() },
             headers: {
               'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-              'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
+              'x-rapidapi-key': process.env.REACT_APP_API_KEY.toString(),
             },
           })
         // console.log('Data ->',data)
@@ -26,8 +26,6 @@ const Hero = () => {
     }
     getData()
   }, [])
-
-  // console.log('Game Data ->', featuredGames.id)
 
 
   return (

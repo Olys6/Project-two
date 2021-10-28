@@ -6,7 +6,19 @@
 /* Nav Start */
 .custom-nav {
   background-color: hsl(217, 71%, 53%);
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
+
+nav.custom-nav-position {
+  background-color: hsl(217, 71%, 53%);
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+
 
 .custom-flex {
   display: flex;
@@ -38,6 +50,14 @@ span.bold {
   text-align: left;
 }
 
+section.hero {
+  margin-top: 50px;
+}
+
+section.section {
+  margin-top: 50px;
+}
+
 .show-size {
   /* border: 1px solid red; */
   height: 400px;
@@ -45,6 +65,7 @@ span.bold {
 
 .featured-image {
   height: 90%;
+  border-radius: 7px;
 }
 /* Hero Section End */
 
@@ -60,9 +81,15 @@ span.bold {
 }
 
 .custom-input {
-  width: 900px;
+  width: 500px;
   margin-bottom: 100px;
   border: 1px solid hsl(217, 71%, 53%);
+}
+
+div.custom-center {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
 }
 
 .custom-card {
@@ -77,32 +104,77 @@ span.bold {
   transition: all .2s ease;
 }
 
+h6.align-left {
+  text-align: left;
+}
+
+h6 span {
+  font-weight: bold;
+}
+
+h6.bold {
+  font-weight: bold;
+}
+
+div.custom-content {
+  background-color: rgba(214, 212, 212, 0.836);
+}
+
+span.align-right {
+  transform: translateX(-100px) translateY(-10px);
+}
+
 .custom-card:hover {
   /* -webkit-box-shadow: 14px 9px 39px -14px rgba(73,53,227,1);
   -moz-box-shadow: 14px 9px 39px -14px rgba(73,53,227,1);
   box-shadow: 14px 9px 39px -14px rgba(73,53,227,1); */
-  border: 2px solid hsl(217, 71%, 53%);
-  -webkit-box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
-  -moz-box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
-  box-shadow: 15px 19px 0px -4px hsl(217, 71%, 53%);
+  border: 2px solid #485fc7;
+  -webkit-box-shadow: 15px 19px 0px -4px #485fc7;
+  -moz-box-shadow: 15px 19px 0px -4px #485fc7;
+  box-shadow: 15px 19px 0px -4px #485fc7;
   cursor: pointer;
 }
 
 .select {
   font-weight: bold;
   padding-left: 10px;
+  margin-left: 20px;
   width: 140px;
 }
 
-/* All games comoponent end */
-
-.custom-content {
-  
+div.custom-div {
+  background-color: rgba(240, 240, 240, 0.836);
+  height: 30px;
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 10px;
+  padding-bottom: 5px;
 }
 
+.add-games-button {
+  display: flex;
+  height: 25px;
+  width: 100px;
+  z-index: 10;
+  transition: all .3s ease;
+}
+
+.add-games-button:hover {
+  color:hsl(217, 71%, 53%);
+}
+.add-games-button p {
+  font-size: 13px;
+  font-weight: bold;
+  margin-left: 5px;
+}
+/* All games comoponent end */
+
+
 .tryNowButton {
-  margin-top: 15px;
-  padding: 0px 10px 0px 10px;
+  margin-top: 20px;
+  margin-right: 10px;
 }
 
 .develPublish {
@@ -116,5 +188,43 @@ span.bold {
 }
 
 .displayGameContainer {
+  margin-top: 20px;
+}
+
+/* Footer Start */
+.footer-background-color {
+  background-color: #485fc7;
+}
+/* Footer end */
+
+.minimumSpecs {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+
+.listItemSpecs {
+  padding: 5px;
+}
+
+.gameDescription {
+  text-align: left;
+}
+
+.develPublishH4 {
+  font-size: 17px;
+}
+
+.leftTile {
+  margin-right: 50px;
+}
+
+.rightTile {
+  width: 200px;
+  height: 110px;
+}
+
+.addGamesButton {
+  margin-right: -10px;
+  margin-left: 11px;
   margin-top: 20px;
 }

@@ -3,6 +3,13 @@ import { Link } from 'react-router-dom'
 
 
 const GameCard = ({ game, id }) => {
+
+  const handleClick = (event) => {
+    console.log('clicked')
+    console.log('Event', event.target.parentElement.parentElement)
+  }
+
+
   return (
     <div key={game.id} className="column is-one-quarter-desktop is-one-third-tablet">
       <div className="card custom-card">
@@ -17,14 +24,17 @@ const GameCard = ({ game, id }) => {
           </div>
           <div className="card-content custom-content">
             {/* Place this tag on the right next to the game.title */}
-            <span className="tag is-warning">{game.genre}</span>
-            <h6 className="subtitle is-6">Platform: {game.platform}</h6>
+            <span className="tag is-warning align-right">{game.genre}</span>
+            <h6 className="subtitle is-6 align-left"><h6 className="bold">Platform:</h6>{`${game.platform}`}</h6>
             {/* <h6 className="subtitle is-6">Publisher: {game.publisher}</h6>
             <h6 className="subtitle is-6">Developer: {game.developer}</h6> */}
-            <h6 className="subtitle is-6">Release Date: {game.release_date}</h6>
-            <h6 className="subtitle is-6">{`${game.short_description.slice(0, 40)}...`}</h6>
+            <h6 className="subtitle is-6 align-left"><h6 className="bold">Release Date:</h6> {game.release_date}</h6>
+            <h6 className="subtitle is-6 align-left">{`${game.short_description.slice(0, 40)}...`}</h6>
           </div>
         </Link>
+        <div className="add-games-button custom-div" onClick={handleClick}>
+          <i className="fas fa-plus"></i><p>My Games</p>
+        </div>
       </div>
     </div>
   )

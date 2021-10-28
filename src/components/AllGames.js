@@ -17,7 +17,7 @@ const AllGames = () => {
             params: { 'sort-by': 'alphabetical' },
             headers: {
               'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-              'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
+              'x-rapidapi-key': process.env.REACT_APP_API_KEY.toString(),
             },
           })
         // console.log('Response Data ->', data)
@@ -56,32 +56,36 @@ const AllGames = () => {
       <section className="section">
         <div className="container">
           <div className="custom-row">
-            <input type="text" className="input is-rounded custom-input" placeholder="Search Games" onChange={handleSearch}/>
-            <select name="option" className="select" onChange={handleGenreOption}>
-              <option value="all">All</option>
-              <option value="MMORPG">MMORPG</option>
-              <option value="Battle Royale">Battle Royale</option>
-              <option value="Shooter">Shooter</option>
-              <option value="Action RPG">Action RPG</option>
-              <option value="MMO">MMO</option>
-              <option value="MMORPG">MMORPG</option>
-              <option value="Social">Social</option>
-              <option value="Card Game">Card Game</option>
-              <option value="MOBA">MOBA</option>
-              <option value="Fighting">Fighting</option>
-              <option value="Fantasy">Fantasy</option>
-              <option value="Strategy">Strategy</option>
-              <option value="Racing">Racing</option>
-              <option value="Sports">Sports</option>
-            </select>
-            <select name="platformOption" className="select" onChange={handePlatformOption}>
-              <option value="all">All Platforms</option>
-              <option value="PC (Windows)">PC (Windows)</option>
-              <option value="Web Browser">Web Browser</option>
-            </select>
+            <div>
+              <input type="text" className="input is-rounded custom-input" placeholder="Search Games" onChange={handleSearch}/>
+            </div>
+            <div>
+              <select name="option" className="select" onChange={handleGenreOption}>
+                <option value="all">All Genres</option>
+                <option value="MMORPG">MMORPG</option>
+                <option value="Battle Royale">Battle Royale</option>
+                <option value="Shooter">Shooter</option>
+                <option value="Action RPG">Action RPG</option>
+                <option value="MMO">MMO</option>
+                <option value="MMORPG">MMORPG</option>
+                <option value="Social">Social</option>
+                <option value="Card Game">Card Game</option>
+                <option value="MOBA">MOBA</option>
+                <option value="Fighting">Fighting</option>
+                <option value="Fantasy">Fantasy</option>
+                <option value="Strategy">Strategy</option>
+                <option value="Racing">Racing</option>
+                <option value="Sports">Sports</option>
+              </select>
+              <select name="platformOption" className="select" onChange={handePlatformOption}>
+                <option value="all">All Platforms</option>
+                <option value="PC (Windows)">Windows</option>
+                <option value="Web Browser">Web Browser</option>
+              </select>
+            </div>
           </div>
           
-          <div className="columns is-multiline">
+          <div className="columns is-multiline custom-center">
             {filterGames().map((game) => {
               // console.log('Game ->', game)
               // console.log('Game Thumbnail ->', game.thumbnail)

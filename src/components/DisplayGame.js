@@ -36,7 +36,7 @@ const DisplayGame = () => {
             params: { id: { id } },
             headers: {
               'x-rapidapi-host': 'free-to-play-games-database.p.rapidapi.com',
-              'x-rapidapi-key': '7d06a0e0damshdd8616ef3244152p1f2eadjsn9f732ca3d067',
+              'x-rapidapi-key': process.env.REACT_APP_API_KEY.toString(),
             },
           })
         // console.log('Data ->', data)
@@ -48,6 +48,7 @@ const DisplayGame = () => {
     }
     getData()
   }, [])
+
 
   // console.log('gameInfo', gameInfo)
   // console.log('id', id)
@@ -63,8 +64,9 @@ const DisplayGame = () => {
   const minimumSystemRequirements = []
   for (const property in gameInfo.minimum_system_requirements) {
     console.log(`${property}: ${gameInfo.minimum_system_requirements[property]}`)
-    minimumSystemRequirements.push(`${gameInfo.minimum_system_requirements[property]}`)
+    minimumSystemRequirements.push(`${property}: ${gameInfo.minimum_system_requirements[property]}`)
   }
+  
   
   console.log('Array', minimumSystemRequirements)
 
@@ -78,32 +80,40 @@ const DisplayGame = () => {
             <figure className="image">
               <a href={gameInfo.freetogame_profile_url}><img className="displayThumbnail" src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
             </figure>
-            <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer" className="button is-success is-fullwidth is-large tryNowButton">Try Now!</a>
+            <div className="columns">
+              <a className="column button is-one-fifth is-large is-link addGamesButton" onClick={console.log('Plus Button CLicked')}><i className="fas fa-plus"></i></a>
+              <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer" className="column  button is-success is-fullwidth is-large tryNowButton">Try Now!</a>
+            </div>
             <hr />
-            <p className="is-4">Minimum System Requirements</p>
+            
             {/* <p className="is-4">{gameInfo.minimum_system_requirements.os}</p> */}
             {/* <p>{gameInfo.minimum_system_requirements}</p> */}
-            <ul>
-              {minimumSystemRequirements.map(( index ) => {
-                return (
-                  <li key={index}>{ minimumSystemRequirements[index] }</li>
-                )
-              })}
-              {/* <li>{result[0][1]}</li> */}
-              {/* <li>{result[1][1]}</li>
-              <li>{result[2][1]}</li> */}
-              {/* {gameInfo.minimum_system_requirements.map(( item, index ) => {
-                return (<li key={index}>{item}</li>)
-              })} */}
-              <li>{minimumSystemRequirements[0]}</li>
-              <li>{minimumSystemRequirements[1]}</li>
-            </ul>
+            <div className="tile is-ancestor">
+              <div className="tile is-parent ">
+                <ul className="  leftTile is-two-fifths is-child tile notification is-dark is-6">
+                  <p className="  minimumSpecs title">Minimum System Requirements</p>
+                  {minimumSystemRequirements.map(( minimumSystemRequirement, index ) => {
+                    return (
+                      <li className="listItemSpecs" key={minimumSystemRequirement}>{ minimumSystemRequirements[index] }</li>
+                    )
+                  })}
+                </ul>
+                <ul className="tile notification is-dark is-5 rightTile column is-two-fifths">
+                  <p className=" ">Publisher: <span className="title develPublishH4">{gameInfo.publisher}</span> | Developer: <span className="title develPublishH4">{gameInfo.developer}</span></p>
+                </ul>
+                <a href={`https://twitter.com/share?url=<${gameInfo.freetogame_profile_url}>&text=<Check out this game!>via=<USERNAME>`}>
+                  Twitter
+                </a>
+                {/* <button className="button tile is-link" onClick="copyToClipboard('{gameInfo.freetogame_profile_url}')"><i className="far fa-copy"></i></button> */}
+              </div>
+            </div>
           </div>
           <div className="column is-half">
             <h4 className="title is-4">Game Description</h4>
-            <p className="">{gameInfo.description}</p>
-            <hr />
-            <h4 className="title is-5 develPublishH4">Developer by: <span className="develPublish">{gameInfo.developer}</span> and Published by <span className="develPublish">{gameInfo.publisher}</span></h4>
+            <p className="gameDescription">{gameInfo.description}</p>
+            {/* <hr /> */}
+  
+            {/* <h4 className="title is-5 develPublishH4">Developer by: <span className="develPublish">{gameInfo.developer}</span> and Published by <span className="develPublish">{gameInfo.publisher}</span></h4> */}
             <hr />
           </div>
         </div>

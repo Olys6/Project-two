@@ -4,7 +4,7 @@ import Logo from '../Assets/logo/imagecrop.png'
 
 const Navbar = () => {
   return (
-    <nav className="navbar is-link">
+    <nav className="navbar is-link custom-nav-position">
       <div className="container">
         <div className="navbar-brand">
           <span className="title">
