@@ -14,7 +14,6 @@ const GameCard = ({ game, id }) => {
     localStorage.setItem(`${game.id} Game Release`, game.release_date)
   }
 
-
   return (
     <div key={game.id} className="column is-one-quarter-desktop is-one-third-tablet">
       <div className="card custom-card">

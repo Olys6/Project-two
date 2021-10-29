@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
 // import { Link } from 'react-router-dom'
 
 const DisplayGame = () => {
+
 
   const [gameInfo, setGameInfo] = useState([])
   const [hasError, setHasError] = useState(false)
@@ -51,6 +53,16 @@ const DisplayGame = () => {
   //   // localStorage.setItem(`${gameInfo.id} Game Release`, gameInfo.release_date)
   // }
 
+  const handleClick = () => {
+    console.log('clicked')
+    localStorage.setItem(`${gameInfo.id} Game ID`, gameInfo.id)
+    localStorage.setItem(`${gameInfo.id} Game Image`, gameInfo.thumbnail)
+    localStorage.setItem(`${gameInfo.id} Game title`, gameInfo.title)
+    localStorage.setItem(`${gameInfo.id} Game Description`, gameInfo.short_description)
+    localStorage.setItem(`${gameInfo.id} Game Platform`, gameInfo.platform)
+    localStorage.setItem(`${gameInfo.id} Game Release`, gameInfo.release_date)
+  }
+
   return (
     <section className="displayGameContainer">
       <div className="container">
@@ -59,17 +71,17 @@ const DisplayGame = () => {
         <div className="columns">
           <div className="column is-half">
             <figure className="image">
-              <a href={gameInfo.freetogame_profile_url}><img className="displayThumbnail " src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
+              <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer"><img className="displayThumbnail " src={gameInfo.thumbnail} alt={gameInfo.title}/></a>
             </figure>
-            <div className="columns">
-              <a className="column button is-one-fifth is-large is-link addGamesButton"><i className="fas fa-plus"></i></a>
+            <div className="columns" onClick={handleClick}>
+              <a className="column button is-one-fifth is-large is-link addGamesButton" onClick={handleClick}><i className="fas fa-plus"></i></a>
               <a href={gameInfo.freetogame_profile_url} target="_blank" rel="noreferrer" className="column  button is-success is-fullwidth is-large tryNowButton">Try Now!</a>
             </div>
             <hr />
             <div className="columns">
 
-              <p className="column is-one-fifth shareText">Share:</p>
-              <a className="button column is-info" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
+              {/* <p className="column is-one-fifth shareText">Share:</p> */}
+              <a className="button column is-info shareButton" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter"> </i> Twitter
               </a>
               <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=Check out for free${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
@@ -105,11 +117,12 @@ const DisplayGame = () => {
           </div>
           <div className="column is-half">
             <h4 className="title is-4">Game Description</h4>
-            <p className="gameDescription">{gameInfo.description}</p>
+            <p className="gameDescription animate__backInRight">{gameInfo.description}</p>
             {/* <hr /> */}
   
             {/* <h4 className="title is-5 develPublishH4">Developer by: <span className="develPublish">{gameInfo.developer}</span> and Published by <span className="develPublish">{gameInfo.publisher}</span></h4> */}
             <hr />
+            <h4 className="title is-5">Platform: {gameInfo.platform}</h4>
           </div>
         </div>
       </div>

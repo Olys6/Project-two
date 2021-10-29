@@ -183,6 +183,35 @@ section.table-section {
   margin-top:  120px;
 }
 
+abbr {
+  color: #485fc7;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+tr.table-row-head {
+  text-align: center;
+}
+
+tbody td.center {
+  text-align: center;
+}
+
+i.custom-close {
+  color: red;
+  font-size: 25px;
+  transition: all .3s ease;
+  cursor: pointer;
+}
+
+i.custom-close:hover {
+  color: gray;
+}
+
+span.hide-game-id {
+  display: none;
+}
+
 
 .tryNowButton {
   margin-top: 20px;
@@ -200,11 +229,12 @@ section.table-section {
 }
 
 .displayGameContainer {
-  margin-top: 20px;
+  margin-top: 85px;
 }
 
 /* Footer Start */
 .footer-background-color {
+  margin-top: 20px;
   background-color: #485fc7;
 }
 /* Footer end */
@@ -247,5 +277,11 @@ section.table-section {
 }
 
 .shareButton {
-  margin: 0px
+  margin-right: 4px;
+  margin-left: 4px;
+
+}
+
+.button:hover{
+  opacity: 1;
 }

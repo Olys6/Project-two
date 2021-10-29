@@ -16,6 +16,7 @@ const AllGames = () => {
   }, [location.pathname])
 
   useEffect(() => {
+
     const getData = async () => {
       try {
         const { data } = await axios.get('https://free-to-play-games-database.p.rapidapi.com/api/games', 
@@ -33,6 +34,7 @@ const AllGames = () => {
       }
     }
     getData()
+
   }, [])
 
   const handleGenreOption = (event) => {
@@ -46,6 +48,10 @@ const AllGames = () => {
   const handleSearch = (event) => {
     setSearch(event.target.value)
   }
+
+  
+
+  // console.log('games again', games)
 
   const filterGames = () => {
     const regexSearch = new RegExp(search, 'ig')
