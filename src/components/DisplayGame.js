@@ -84,7 +84,7 @@ const DisplayGame = () => {
               <a className="button column is-info shareButton" href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
                 <i className="fab fa-twitter"> </i> Twitter
               </a>
-              <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=Check out for free${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
+              <a className="button column is-link shareButton" href={`https://www.facebook.com/sharer/sharer.php?u=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
                 <i className="fab fa-facebook-square"> </i> Facebook 
               </a>
               <a className="button column is-danger shareButton" href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">

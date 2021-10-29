@@ -4,7 +4,9 @@ import { Link } from 'react-router-dom'
 
 const GameCard = ({ game, id }) => {
 
-  const handleClick = ( ) => {
+  const handleClick = (event) => {
+    console.log(event.target.innerText)
+    event.target.innerText = 'Added!'
     console.log('clicked')
     localStorage.setItem(`${game.id} Game ID`, game.id)
     localStorage.setItem(`${game.id} Game Image`, game.thumbnail)
@@ -37,7 +39,7 @@ const GameCard = ({ game, id }) => {
           </div>
         </Link>
         <div className="add-games-button custom-div" onClick={handleClick}>
-          <i className="fas fa-plus"></i><p>My Games</p>
+          <i className="fas fa-plus"></i><p className="my-games">My Games</p>
         </div>
       </div>
     </div>

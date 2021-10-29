@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 
 const MyGames = () => {
 
@@ -11,16 +11,13 @@ const MyGames = () => {
     // console.log(localStorage)
 
     const IDs = []
-
     for (const key in localStorage) {
       //console.log(Number(key.slice(0,3)))
       //console.log(Number(key.slice(0,3)))
       IDs.push(Number(key.slice(0,3)))
     }
 
-    // console.log('Sorted IDs ->', IDs.sort())
-
-    function onlyUnique(value, index, self) {
+    const onlyUnique = (value, index, self) => {
       return self.indexOf(value) === index
     }
 
@@ -31,93 +28,14 @@ const MyGames = () => {
 
     uniqueIDs = filteredIDs.filter(onlyUnique)
 
-    // console.log('Unique ->',uniqueIDs)
-
-
-    // filteredIDs.forEach(id => console.log(id))
-
-
-    // uniqueIDs.map(id => {
-    //   //console.log(id)
-    //   console.log('Description', localStorage.getItem(`${id} Game Description`))
-    //   console.log('Image',localStorage.getItem(`${id} Game Image`))
-    //   console.log('Game Platform',localStorage.getItem(`${id} Game Platform`))
-    //   console.log('Game Release',localStorage.getItem(`${id} Game Release`))
-    //   console.log('Game Title',localStorage.getItem(`${id} Game title`))
-    // })
-
-    // let keyName = localStorage.key(index)
-  
-    // filteredIDs.forEach(id => {
-    //   console.log(id)
-    //   // console.log('Description', localStorage.getItem(`${id} Game Description`))
-    //   // console.log('Image',localStorage.getItem(`${id} Game Image`))
-    //   // console.log('Game Platform',localStorage.getItem(`${id} Game Platform`))
-    //   // console.log('Game Release',localStorage.getItem(`${id} Game Release`))
-    //   // console.log('Game Title',localStorage.getItem(`${id} Game title`))
-    // })
-
-    // console.log('Description', localStorage.getItem(`${gameId} Game Description`))
-    // console.log('Image',localStorage.getItem(`${gameId} Game Image`))
-    // console.log('Game Platform',localStorage.getItem(`${gameId} Game Platform`))
-    // console.log('Game Release',localStorage.getItem(`${gameId} Game Release`))
-    // console.log('Game Title',localStorage.getItem(`${gameId} Game title`))
   
   }
 
-  // const gameDescription = localStorage.getItem(`${gameId} Game Description`)
-  // const gameGameImage = localStorage.getItem(`${gameId} Game Image`)
-  // const gameGamePlatform = localStorage.getItem(`${gameId} Game Platform`)
-  // const gameGameRelease = localStorage.getItem(`${gameId} Game Release`)
-  // const gameTitle = localStorage.getItem(`${gameId} Game title`)
-
   checkLocalStorage()
 
-  // const localStorageArr = []
-  // for (const property in localStorage) {
-  //   // console.log(`${property}: ${localStorage}`)
-  //   // localStorageArr.push(`${property}: ${localStorage}`)
-  //   console.log('property', property)
-  // }
-
-  // const myGames = Object.entries(localStorage)
-  // // for (const prop in localStorage) {
-  // //   console.log('prop ->', prop)
-  // //   console.log('localStorage', localStorage)
-  // //   myGames.push(`${localStorage[prop]}`)
-  // // }
-  
-
-  // myGames.forEach(([key, value]) => {
-  //   console.log('key ->', key)
-  //   console.log('value ->', value)
-  // }) 
-
-  // // for (i = 0, i < )
-
-  // console.log('myGames ->', myGames)
-  // console.log('values ->', Object.entries(localStorage).sort())
-
-
-
-  // const addTable = () => {
-  //   console.log('Description', localStorage.getItem(`${gameId} Game Description`))
-  //   console.log('Image', localStorage.getItem(`${gameId} Game Image`))
-  //   console.log('Game Platform', localStorage.getItem(`${gameId} Game Platform`))
-  //   console.log('Game Release', localStorage.getItem(`${gameId} Game Release`))
-  //   console.log('Game Title', localStorage.getItem(`${gameId} Game title`))
-  // }
-
-  // addTable()
 
   const handleClick = (event) => {
     console.log('Event', event.target.id)
-
-    // console.log('Description', localStorage.getItem(`${id} Game Description`))
-    // console.log('Image',localStorage.getItem(`${id} Game Image`))
-    // console.log('Game Platform',localStorage.getItem(`${id} Game Platform`))
-    // console.log('Game Release',localStorage.getItem(`${id} Game Release`))
-    // console.log('Game Title',localStorage.getItem(`${id} Game title`))
     localStorage.removeItem(`${event.target.id} Game ID`)
     localStorage.removeItem(`${event.target.id} Game Description`)
     localStorage.removeItem(`${event.target.id} Game Image`)
@@ -126,10 +44,6 @@ const MyGames = () => {
     localStorage.removeItem(`${event.target.id} Game title`)
     window.location.reload()
   }
-
-  // useEffect(() => {
-
-  // }, [handleClick])
 
 
   console.log(localStorage.getItem('306 Game Image'))
