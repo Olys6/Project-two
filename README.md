@@ -69,7 +69,7 @@ At this point we weren’t far from what we made with our wireframe. I had made 
 
 ## 2nd Day
 
-By the 2nd day, we finished our main objective which is displayed in the wireframe. We worked on styling the website more with CSS and I gave the banner the name of the game and a proper description by calling it with an axios get request. We gave the “h2” tag the value of the game title and the ”p” tag below it the value of the game short description. I also added a platform filter with the filter array method, it goes through the array of games and searches if the game platform is equal to the platform selected. I then made a page that shows a longer description of the game, system requirements, developer and publisher credit and a “try now” button which sends you to the official website of the API. I also made a logo with adobe sparks.
+By the 2nd day, we finished our main objective which is displayed in the wireframe. We worked on styling the website more with CSS and I gave the banner the name of the game and a proper description by calling it with an axios get request. We gave the “h2” tag the value of the game title and the ”p” tag below it the value of the game short description. I also added a platform filter with the filter array method, it goes through the array of games and searches if the game platform is equal to the platform selected. I then made a page that shows a longer description of the game, system requirements, developer and publisher credit and a “try now” button which sends you to the official website of the API. I also made a logo with Adobe Sparks.
 
 <img src="https://i.imgur.com/YmCZFxP.png">
 <img src="https://i.imgur.com/z8kC7L4.png">
