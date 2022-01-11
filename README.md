@@ -109,7 +109,7 @@ This was our last day to finish our bonus goals. I worked hard on styling the â€
 
 `
 
-
+<img src="https://i.imgur.com/fuu6I5l.png">
 
 
 ## Wins & Challenges
