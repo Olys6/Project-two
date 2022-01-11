@@ -21,7 +21,7 @@ Technologies used
 
 <div style="display: flex; flex-direction: row; gap: 1.5rem; margin-bottom: 10px;">
   <img style="width: 70px;" src="https://i.imgur.com/BYUqdTS.png">
-  <img style="width: 70px;" src="https://i.imgur.com/QlYh5mv.png">
+  <img style="width: 100px;" src="https://i.imgur.com/tlQzHt6.png">
   <img style="width: 100px;" src="https://i.imgur.com/k9De3HS.png">
   <img style="width: 300px;" src="https://i.imgur.com/KX1h5kY.png">
   <img style="width: 200px;" src="https://i.imgur.com/C9s6ueO.png">
@@ -38,7 +38,7 @@ Half of the day was spent planning what the project would be on with my classmat
   
 At this point we weren’t far from what we made with our wireframe. I had made the top with Bulma’s hero component and started working on the cards using Bulma’s card component to display the games. The banner at the top is supposed to represent the “Featured Games” by displaying a random game every time the user refreshes the page using “Math.random”, the hero component sends a get request to the game which ID correlates to the random value I created. 
 
-`Hero component:
+Hero component:
 
     const [featuredGames, setFeaturedGames] = useState([])
 
@@ -64,7 +64,7 @@ At this point we weren’t far from what we made with our wireframe. I had made 
       getData()
     }, [])
 
-`
+
 <img src="https://i.imgur.com/znP3lVK.png">
 
 ## 2nd Day
@@ -79,35 +79,35 @@ This was our last day to finish our bonus goals. I worked hard on styling the �
 
 <img src="https://i.imgur.com/UJBN5y1.png">
 
-`Twitter share button:
+Twitter share button:
 
-              <a href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
-                <i className="fab fa-twitter"> </i> Twitter
-              </a>
+    <a href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
+      <i className="fab fa-twitter"> </i> Twitter
+    </a>
 
-`
-`Facebook share button:
 
-              <a href={`https://www.facebook.com/sharer/sharer.php?u=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
-                <i className="fab fa-facebook-square"> </i> Facebook 
-              </a>
+Facebook share button:
 
-`
-`Email share button:
+    <a href={`https://www.facebook.com/sharer/sharer.php?u=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
+      <i className="fab fa-facebook-square"> </i> Facebook 
+    </a>
 
-              <a href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
-                <i className="fas fa-envelope"></i> Email
-              </a>
 
-`
+Email share button:
 
-`Reddit share button:
+    <a href={`mailto:?subject=Check out ${gameInfo.title}!&body=${gameInfo.freetogame_profile_url}`} target="_blank" rel="noreferrer">
+      <i className="fas fa-envelope"></i> Email
+    </a>
 
-              <a className="button column is-warning shareButton" href="https://reddit.com/submit?url=<URL>&title=<TITLE>" target="_blank" rel="noreferrer">
-                <i className="fab fa-reddit-square"></i> Reddit
-              </a>
 
-`
+
+Reddit share button:
+
+    <a className="button column is-warning shareButton" href="https://reddit.com/submit?url=<URL>&title=<TITLE>" target="_blank" rel="noreferrer">
+      <i className="fab fa-reddit-square"></i> Reddit
+    </a>
+
+
 
 <img src="https://i.imgur.com/fuu6I5l.png">
 
