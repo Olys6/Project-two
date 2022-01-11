@@ -1,4 +1,4 @@
-# Rapid Games
+<h1 style="text-align: center;">Rapid Games</h1>
 
 
 ## The Brief
