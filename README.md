@@ -79,6 +79,8 @@ This was our last day to finish our bonus goals. I worked hard on styling the â€
 
 <img src="https://i.imgur.com/UJBN5y1.png">
 
+All these buttons work with the social media link that allows to you set up a post for the user to send, the post contains the game information and game title using the API to fill in the share details.
+
 Twitter share button:
 
     <a href={`https://twitter.com/share?url=${gameInfo.freetogame_profile_url}&text=Check out ${gameInfo.title}!`} target="_blank" rel="noreferrer">
